@@ -101,10 +101,9 @@ export default function App() {
         </>
       ) : (
         <>
-          <View style={{ flex: 1 }}>
-            <View style={styles.city}>
-              <Text style={styles.description}>Are you sure?</Text>
-            </View>
+        <View style={styles.city}>
+            <Text style={styles.cityName}>Not Allowed</Text>
+            <Text style={{...styles.description, marginTop: 30, fontSize: "20"}}>Tap Settings and enable Override GPS location under Advanced settings.</Text>
           </View>
         </>
       )}
