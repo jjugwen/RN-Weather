@@ -10,10 +10,13 @@ import {
 } from "react-native";
 import * as Location from "expo-location";
 import { APP_WEATHERAPI } from "@env";
+import { Fontisto } from '@expo/vector-icons';
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
-
 const API_KEY = APP_WEATHERAPI;
+const icons = {
+  "Clouds": "cloudy", "Clear": "day-sunny", "Rain": "rain"
+}
 
 export default function App() {
   const [city, setCity] = useState("Loading...");
@@ -74,9 +77,12 @@ export default function App() {
             ) : (
               days.map((day, index) => (
                 <View key={index} style={styles.day}>
+                  <View style={styles.row}> 
                   <Text style={styles.temp}>
                     {parseFloat(day.main.temp).toFixed(1)}
                   </Text>
+                  <Fontisto name={icons[day.weather[0].main]} size={48} color="white" />
+                  </View>
                   <Text style={styles.description}>{day.weather[0].main}</Text>
                   <Text style={styles.tinyText}>
                     {day.weather[0].description}
@@ -113,6 +119,7 @@ const styles = StyleSheet.create({
   cityName: {
     fontSize: 58,
     fontWeight: "500",
+    color: "white",
   },
   weather: {
     // backgroundColor: "blue"
@@ -121,16 +128,27 @@ const styles = StyleSheet.create({
     width: SCREEN_WIDTH,
     alignItems: "center",
   },
+  row: {
+    marginBottom: 10,
+    flexDirection: "row", 
+    alignItems: "center", 
+    width: "90%", 
+    justifyContent: "space-between"
+  },
   temp: {
-    marginTop: 50,
     fontWeight: "600",
-    fontSize: 178,
+    fontSize: 100,
+    color: "white"
   },
   description: {
     marginTop: -30,
-    fontSize: 60,
+    width: "85%",
+    color: "white",
+    fontSize: 40,
   },
   tinyText: {
+    width: "83%",
+    color: "white",
     fontSize: 20,
   },
 });
