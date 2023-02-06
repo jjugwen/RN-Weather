@@ -2,8 +2,11 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, Text, ScrollView, Dimensions } from 'react-native';
 import * as Location from 'expo-location';
+import {APP_WEATHERAPI} from "@env"
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
+
+console.log(APP_WEATHERAPI)
 
 export default function App() {
   const [city, setCity] = useState("Loading...")
