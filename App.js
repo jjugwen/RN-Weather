@@ -57,6 +57,7 @@ export default function App() {
           </Text>
           <Text style={styles.description}>{day.weather[0].main}</Text>
           <Text style={styles.tinyText}>{day.weather[0].description}</Text>
+          <Text style={styles.tinyText}>{day.dt_txt.slice(0, 10)}</Text>
         </View>
           )) 
         )
