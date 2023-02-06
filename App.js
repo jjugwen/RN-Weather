@@ -9,7 +9,7 @@ export default function App() {
     <View style={styles.container}>
       <StatusBar style='light' />
       <View style={styles.city}>
-        <Text style={styles.cityName}>Seeoul</Text>
+        <Text style={styles.cityName}>Seoul</Text>
       </View>
       <ScrollView 
         horizontal 
