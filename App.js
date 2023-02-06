@@ -7,9 +7,8 @@ const { width: SCREEN_WIDTH } = Dimensions.get("window");
 
 export default function App() {
   const [city, setCity] = useState("Loading...")
-  const [location, setLocation] = useState();
   const [ok, setOk] = useState(true);
-  const ask = async() => {
+  const getWeather = async() => {
     const {granted} = await Location.requestForegroundPermissionsAsync();
     if(!granted){
       setOk(false)
@@ -19,7 +18,7 @@ export default function App() {
     setCity(location[0].city)
   }
   useEffect(()=> {
-    ask();
+    getWeather();
   })
 
   return (
