@@ -15,7 +15,13 @@ import { Fontisto } from '@expo/vector-icons';
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 const API_KEY = APP_WEATHERAPI;
 const icons = {
-  "Clouds": "cloudy", "Clear": "day-sunny", "Rain": "rain"
+  "Clouds": "cloudy", 
+  "Clear": "day-sunny", 
+  "Rain": "rain",
+  "Atmosphere": "cloudy-gusts",
+  "Snow": "snow",
+  "Drizzle": "rain",
+  "Thunderstorm": "lightning",
 }
 
 export default function App() {
